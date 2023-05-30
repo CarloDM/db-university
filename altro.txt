@@ -1,0 +1,10 @@
+SELECT `students`.`name`, `students`.`surname`, `students`.`registration_number`, `students`.`enrolment_date`
+FROM `students`
+INNER JOIN `degrees`
+ON `degrees`.`id` = `students`.`degree_id`
+INNER JOIN `departments`
+ON `departments`.`id` = `degrees`.`department_id`
+WHERE `departments`.`name` = 'dipartimento di biologia'
+ORDER BY `students`.`enrolment_date` DESC
+LIMIT 10
+OFFSET 0;
